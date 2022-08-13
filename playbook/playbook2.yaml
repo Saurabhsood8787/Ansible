@@ -1,0 +1,10 @@
+- 
+    name: testing 2 tasks
+    hosts: webserver1
+    tasks:
+        -
+            name: my first task is creating task1 file
+            command: touch /tmp/task1.txt
+        -
+            name: my second task is creating task2 file
+            command: touch /tmp/task2.txt

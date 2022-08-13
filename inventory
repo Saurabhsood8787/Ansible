@@ -1,0 +1,16 @@
+webserver1 ansible_host=35.233.208.205 ansible_user=buser ansible_ssh_pass=buser  ansible_connection=ssh ansible_port=22 ansible_python_interpreter=/usr/bin/python3
+webserver2 ansible_host=34.82.156.113 ansible_user=test ansible_ssh_pass=test ansible_connection=ssh ansible_port=22 ansible_python_interpreter=/usr/bin/python3
+sqlserver1 ansible_host=34.82.156.114 ansible_user=test ansible_ssh_pass=test  ansible_connection=ssh ansible_port=22 ansible_python_interpreter=/usr/bin/python3
+sqlserver2 ansible_host=34.82.156.115 ansible_user=test ansible_ssh_pass=test  ansible_connection=ssh ansible_port=22 ansible_python_interpreter=/usr/bin/python3
+
+[webserver]
+webserver1
+webserver2
+
+[sqlserver]
+sqlserver1
+sqlserver2
+
+[webandsql:children]
+webserver
+sqlserver
